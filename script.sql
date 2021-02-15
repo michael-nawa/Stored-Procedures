@@ -1,13 +1,12 @@
 USE [master]
 GO
-/****** Object:  Database [OctodutyDatabase]    Script Date: 2/9/2021 10:08:55 ******/
+/****** Object:  Database [OctodutyDatabase]    Script Date: 15-Feb-21 16:14:44 ******/
 CREATE DATABASE [OctodutyDatabase]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'OctodutyDatabase', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\OctodutyDatabase_Primary.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'OctodutyDatabase', FILENAME = N'C:\Users\Maliwa M. Nawa\OctodutyDatabase_Primary.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'OctodutyDatabase_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\OctodutyDatabase_Primary.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
- WITH CATALOG_COLLATION = DATABASE_DEFAULT
+( NAME = N'OctodutyDatabase_log', FILENAME = N'C:\Users\Maliwa M. Nawa\OctodutyDatabase_Primary.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
 ALTER DATABASE [OctodutyDatabase] SET COMPATIBILITY_LEVEL = 130
 GO
@@ -74,15 +73,21 @@ ALTER DATABASE [OctodutyDatabase] SET TARGET_RECOVERY_TIME = 0 SECONDS
 GO
 ALTER DATABASE [OctodutyDatabase] SET DELAYED_DURABILITY = DISABLED 
 GO
-ALTER DATABASE [OctodutyDatabase] SET ACCELERATED_DATABASE_RECOVERY = OFF  
-GO
-EXEC sys.sp_db_vardecimal_storage_format N'OctodutyDatabase', N'ON'
-GO
 ALTER DATABASE [OctodutyDatabase] SET QUERY_STORE = OFF
 GO
 USE [OctodutyDatabase]
 GO
-/****** Object:  Table [dbo].[Assignment]    Script Date: 2/9/2021 10:08:56 ******/
+ALTER DATABASE SCOPED CONFIGURATION SET LEGACY_CARDINALITY_ESTIMATION = OFF;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 0;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET PARAMETER_SNIFFING = ON;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET QUERY_OPTIMIZER_HOTFIXES = OFF;
+GO
+USE [OctodutyDatabase]
+GO
+/****** Object:  Table [dbo].[Assignment]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -98,10 +103,10 @@ CREATE TABLE [dbo].[Assignment](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AssignmentSubmission]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[AssignmentSubmission]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -117,10 +122,10 @@ CREATE TABLE [dbo].[AssignmentSubmission](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Attendance]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[Attendance]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -134,10 +139,10 @@ CREATE TABLE [dbo].[Attendance](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DayOfWeek]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[DayOfWeek]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -148,10 +153,10 @@ CREATE TABLE [dbo].[DayOfWeek](
  CONSTRAINT [PK_DayOfWeek] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Grade]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[Grade]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -162,10 +167,10 @@ CREATE TABLE [dbo].[Grade](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Student]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[Student]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -179,10 +184,10 @@ CREATE TABLE [dbo].[Student](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Subject]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[Subject]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -193,10 +198,10 @@ CREATE TABLE [dbo].[Subject](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Teacher]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[Teacher]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -209,10 +214,10 @@ CREATE TABLE [dbo].[Teacher](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TeacherSubjects]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[TeacherSubjects]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -225,10 +230,10 @@ CREATE TABLE [dbo].[TeacherSubjects](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TimeOfDays]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[TimeOfDays]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -239,10 +244,10 @@ CREATE TABLE [dbo].[TimeOfDays](
  CONSTRAINT [PK_TimeOfDays] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TimeTable]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[TimeTable]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -257,10 +262,10 @@ CREATE TABLE [dbo].[TimeTable](
  CONSTRAINT [PK_TimeTable] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 2/9/2021 10:08:56 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -279,157 +284,8 @@ CREATE TABLE [dbo].[Users](
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[Assignment] ON 
-
-INSERT [dbo].[Assignment] ([Id], [SubjectId], [TeacherId], [GradeID], [Title], [Deadline], [FilePath]) VALUES (2, 2, 3, 3, N'Rose Colored Boys', CAST(N'2021-02-24' AS Date), N'.gitconfig')
-INSERT [dbo].[Assignment] ([Id], [SubjectId], [TeacherId], [GradeID], [Title], [Deadline], [FilePath]) VALUES (3, 3, 3, 3, N'Math Assignment', CAST(N'2020-10-12' AS Date), N'File.pdf')
-INSERT [dbo].[Assignment] ([Id], [SubjectId], [TeacherId], [GradeID], [Title], [Deadline], [FilePath]) VALUES (12, 4, 23, 5, N'New Test', CAST(N'2021-02-27' AS Date), N'c#_Aid.cs')
-SET IDENTITY_INSERT [dbo].[Assignment] OFF
-GO
-SET IDENTITY_INSERT [dbo].[AssignmentSubmission] ON 
-
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (1, 2, 5, CAST(N'2020-10-12' AS Date), CAST(88 AS Decimal(18, 0)), N'jjjj', N'file.pdf')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (2, 3, 5, CAST(N'2020-10-12' AS Date), CAST(6666 AS Decimal(18, 0)), N'yhhhhhh', N'file.pdf')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (3, 5, 8, CAST(N'2020-10-12' AS Date), CAST(12 AS Decimal(18, 0)), N'lol', N'file.pdf')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (4, 2, 6, CAST(N'2020-10-05' AS Date), CAST(100 AS Decimal(18, 0)), N'Sigrid Sucker punch', N'bluh')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (7, 2, 0, CAST(N'2021-02-04' AS Date), CAST(12 AS Decimal(18, 0)), N'rubbish', N'c#_Aid.cs')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (8, 12, 0, CAST(N'2021-02-08' AS Date), CAST(0 AS Decimal(18, 0)), N'unset', N'c#_Aid.cs')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (9, 12, 0, CAST(N'2021-02-08' AS Date), CAST(0 AS Decimal(18, 0)), N'unset', N'.gitconfig')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (10, 2, 0, CAST(N'2021-02-08' AS Date), CAST(0 AS Decimal(18, 0)), N'unset', N'.bash_history')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (11, 12, 0, CAST(N'2021-02-08' AS Date), CAST(0 AS Decimal(18, 0)), N'unset', N'.bash_history')
-INSERT [dbo].[AssignmentSubmission] ([Id], [AssignmentId], [StudentId], [UploadDate], [Score], [Comment], [FilePath]) VALUES (12, 12, 22, CAST(N'2021-02-08' AS Date), CAST(5 AS Decimal(18, 0)), N'rubbish
-', N'StartWithAuthDB.mdf')
-SET IDENTITY_INSERT [dbo].[AssignmentSubmission] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Attendance] ON 
-
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (1, 2, 3, CAST(N'2020-10-12T00:00:00.0000000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (6, 4, 6, CAST(N'2020-10-12T00:00:00.0000000' AS DateTime2), N'PRESENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (7, 5, 5, CAST(N'2020-10-12T00:00:00.0000000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (9, 4, 13, CAST(N'2021-02-05T12:26:10.6400000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (10, 4, 15, CAST(N'2021-02-05T12:26:10.6966667' AS DateTime2), N'PRESENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (11, 4, 16, CAST(N'2021-02-05T12:26:10.7033333' AS DateTime2), N'PRESENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (12, 4, 13, CAST(N'2021-02-05T12:38:16.1100000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (13, 4, 15, CAST(N'2021-02-05T12:38:16.1500000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (14, 4, 16, CAST(N'2021-02-05T12:38:16.1533333' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (15, 2, 5, CAST(N'2021-02-08T11:44:53.3800000' AS DateTime2), N'PRESENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (16, 2, 6, CAST(N'2021-02-08T11:44:53.4000000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (17, 2, 22, CAST(N'2021-02-08T11:44:53.4133333' AS DateTime2), N'PRESENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (18, 2, 5, CAST(N'2021-02-08T11:44:57.8266667' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (19, 2, 6, CAST(N'2021-02-08T11:44:57.8433333' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (20, 2, 22, CAST(N'2021-02-08T11:44:57.8500000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (21, 2, 5, CAST(N'2021-02-08T11:45:01.3700000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (22, 2, 6, CAST(N'2021-02-08T11:45:01.3900000' AS DateTime2), N'ABSENT')
-INSERT [dbo].[Attendance] ([Id], [SubjectId], [StudentId], [Date], [State]) VALUES (23, 2, 22, CAST(N'2021-02-08T11:45:01.4000000' AS DateTime2), N'PRESENT')
-SET IDENTITY_INSERT [dbo].[Attendance] OFF
-GO
-SET IDENTITY_INSERT [dbo].[DayOfWeek] ON 
-
-INSERT [dbo].[DayOfWeek] ([Id], [Title]) VALUES (1, N'Monday')
-INSERT [dbo].[DayOfWeek] ([Id], [Title]) VALUES (2, N'Tuesday')
-INSERT [dbo].[DayOfWeek] ([Id], [Title]) VALUES (3, N'Wednesday')
-INSERT [dbo].[DayOfWeek] ([Id], [Title]) VALUES (4, N'Thursday')
-INSERT [dbo].[DayOfWeek] ([Id], [Title]) VALUES (5, N'Friday')
-SET IDENTITY_INSERT [dbo].[DayOfWeek] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Grade] ON 
-
-INSERT [dbo].[Grade] ([Id], [Title]) VALUES (1, N'Grade 5')
-INSERT [dbo].[Grade] ([Id], [Title]) VALUES (2, N'Grade 6')
-INSERT [dbo].[Grade] ([Id], [Title]) VALUES (3, N'Grade 12')
-INSERT [dbo].[Grade] ([Id], [Title]) VALUES (4, N'Grade 11')
-INSERT [dbo].[Grade] ([Id], [Title]) VALUES (5, N'Grade 10')
-SET IDENTITY_INSERT [dbo].[Grade] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Student] ON 
-
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (2, 5, 5, 522612.0000, 22221.0000)
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (3, 6, 5, 444444421.0000, 1111112.0000)
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (4, 8, 2, 254411.0000, 2452214.0000)
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (5, 10, 4, 5000.0000, 1000.0000)
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (6, 13, 3, 1000.0000, 0.0000)
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (7, 15, 3, 5000.0000, 2000.0000)
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (8, 16, 3, 18000.0000, 10000.0000)
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (9, 19, 4, 12000.0000, 3000.0000)
-INSERT [dbo].[Student] ([Id], [StudentId], [GradeId], [ExpectedAmount], [ActualAmount]) VALUES (10, 22, 5, 10000.0000, 90000.0000)
-SET IDENTITY_INSERT [dbo].[Student] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Subject] ON 
-
-INSERT [dbo].[Subject] ([Id], [Title]) VALUES (1, N'Mathematics')
-INSERT [dbo].[Subject] ([Id], [Title]) VALUES (2, N'Science')
-INSERT [dbo].[Subject] ([Id], [Title]) VALUES (3, N'English')
-INSERT [dbo].[Subject] ([Id], [Title]) VALUES (4, N'Geography')
-INSERT [dbo].[Subject] ([Id], [Title]) VALUES (5, N'Chemistry')
-INSERT [dbo].[Subject] ([Id], [Title]) VALUES (6, N'Biology')
-SET IDENTITY_INSERT [dbo].[Subject] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Teacher] ON 
-
-INSERT [dbo].[Teacher] ([Id], [TeacherId], [Salary], [Qualification]) VALUES (2, 3, 100000.0000, N'fileName.pdf')
-INSERT [dbo].[Teacher] ([Id], [TeacherId], [Salary], [Qualification]) VALUES (4, 7, 65125.0000, N'fileName.pdf')
-INSERT [dbo].[Teacher] ([Id], [TeacherId], [Salary], [Qualification]) VALUES (5, 2, 36251.0000, N'fileName.pdf')
-INSERT [dbo].[Teacher] ([Id], [TeacherId], [Salary], [Qualification]) VALUES (7, 12, 44.0000, N'c#_Aid.cs')
-INSERT [dbo].[Teacher] ([Id], [TeacherId], [Salary], [Qualification]) VALUES (8, 17, 555555.0000, N'c#_Aid.cs')
-INSERT [dbo].[Teacher] ([Id], [TeacherId], [Salary], [Qualification]) VALUES (9, 23, 20000.0000, N'File.php')
-SET IDENTITY_INSERT [dbo].[Teacher] OFF
-GO
-SET IDENTITY_INSERT [dbo].[TeacherSubjects] ON 
-
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (2, 2, 1, 6)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (6, 2, 2, 2)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (13, 3, 3, 3)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (14, 7, 5, 6)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (21, 12, 3, 5)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (41, 17, 3, 4)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (43, 17, 5, 1)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (44, 17, 5, 5)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (45, 17, 3, 2)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (46, 2, 3, 4)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (50, 23, 5, 2)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (52, 23, 3, 4)
-INSERT [dbo].[TeacherSubjects] ([Id], [TeacherId], [GradeId], [SubjectId]) VALUES (53, 23, 1, 1)
-SET IDENTITY_INSERT [dbo].[TeacherSubjects] OFF
-GO
-SET IDENTITY_INSERT [dbo].[TimeOfDays] ON 
-
-INSERT [dbo].[TimeOfDays] ([Id], [Title]) VALUES (1, N'08:00 - 10:00')
-INSERT [dbo].[TimeOfDays] ([Id], [Title]) VALUES (2, N'10:00 - 12:00')
-INSERT [dbo].[TimeOfDays] ([Id], [Title]) VALUES (3, N'13:00 - 15:00')
-INSERT [dbo].[TimeOfDays] ([Id], [Title]) VALUES (4, N'15:00 - 17:00')
-SET IDENTITY_INSERT [dbo].[TimeOfDays] OFF
-GO
-SET IDENTITY_INSERT [dbo].[TimeTable] ON 
-
-INSERT [dbo].[TimeTable] ([Id], [TeacherId], [SubjectId], [DayId], [TimeId], [GradeId]) VALUES (3, 5, 3, 1, 2, 4)
-INSERT [dbo].[TimeTable] ([Id], [TeacherId], [SubjectId], [DayId], [TimeId], [GradeId]) VALUES (8, 6, 6, 5, 4, 4)
-INSERT [dbo].[TimeTable] ([Id], [TeacherId], [SubjectId], [DayId], [TimeId], [GradeId]) VALUES (10, 3, 1, 1, 1, 1)
-INSERT [dbo].[TimeTable] ([Id], [TeacherId], [SubjectId], [DayId], [TimeId], [GradeId]) VALUES (11, 2, 2, 2, 2, 2)
-SET IDENTITY_INSERT [dbo].[TimeTable] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Users] ON 
-
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (2, N'Anita', N'Jacon', N'anita@email.com', N'female', N'0975264525', N'543298714', N'PHI', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (3, N'Lisa', N'Jacobs', N'lisa@gmail.com', N'Female', N'0974525698', N'147856215', N'Makeni', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (5, N'Jason', N'luv', N'jason@gmail.com', N'male', N'0971266622', N'525452565', N'New York', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (6, N'Nina7', N'Simone', N'nina@gmail.com', N'Female', N'2545125525', N'555255256', N'New Kasama', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (7, N'Hailey', N'Willams', N'hh@gmail.com', N'female', N'5854265555', N'441566652', N'Chilenge', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (8, N'Joshua', N'Nawa', N'joshua@gmail.com', N'male', N'0978595965', N'563452156', N'Chelston', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (10, N'Update', N'Doe', N'Jane@email.com', N'Male', N'0978905065', N'123456/78/96', N'woodlands chalala', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (12, N'Michaelson', N'Nawa', N'michael@gmail.com', N'Male', N'5551212', N'45444', N'dfvdvfdv', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (13, N'Michaelson', N'Nawa', N'michael@gmail.com', N'Male', N'5551212', N'2655855', N'dfvdvfdv', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (15, N'Lisa ', N'Patric', N'michael@gmail.com', N'Male', N'5551212', N'123456789', N'dfvdvfdv', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (16, N'Nikita', N'Nawa', N'michael@gmail.com', N'Male', N'5551212', N'123456/78/78', N'dfvdvfdv', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (17, N'Chinvya', N'Ra', N'michael@gmail.com', N'Male', N'+260987456258', N'123456/85/74', N'dfvdvfdv', NULL, NULL)
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (18, N'Michaelson', N'Nawa', N'michaelnawa2077@gmail.com', N'Male', N'+26097858562', N'1236541/52/22', N'Chilanga', N'michaelnawa2077@gmail.com', N'Admin')
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (19, N'Fergie', N'Fits Patrick', N'Fergie@email.com', N'Female', N'0978905096', N'568585/45/21', N'NEw Orleans', N'Fergie@email.com', N'Student')
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (21, N'Michaelson', N'Nazier (ADMIN)', N'admin@admin.com', N'Male', N'+26097856623', N'125265/78/52', N'Bluh', N'admin@admin.com', N'Admin')
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (22, N'Billie', N'Elish (STUDENT)', N'student@student.com', N'Female', N'+2965874515', N'65542165/525/5', N'Brooklin', N'Student@Student.com', N'Student')
-INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Email], [Gender], [PhoneNumber], [NRC], [HomeAddress], [Password], [Role]) VALUES (23, N'Shawn', N'Carter (TEACHER)', N'teacher@teacher.com', N'Male', N'+265846582', N'225555/52/52', N'Chalala', N'teacher@teacher.com', N'Teacher')
-SET IDENTITY_INSERT [dbo].[Users] OFF
 GO
 ALTER TABLE [dbo].[Assignment]  WITH CHECK ADD  CONSTRAINT [FK_GradeTbl_Assignment] FOREIGN KEY([GradeID])
 REFERENCES [dbo].[Grade] ([Id])
@@ -522,7 +378,7 @@ REFERENCES [dbo].[TimeOfDays] ([Id])
 GO
 ALTER TABLE [dbo].[TimeTable] CHECK CONSTRAINT [Time Relationship]
 GO
-/****** Object:  StoredProcedure [dbo].[spAssignment_Create&Edit]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spAssignment_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -562,8 +418,9 @@ BEGIN
 	END  
 
 END
+
 GO
-/****** Object:  StoredProcedure [dbo].[spAssignment_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spAssignment_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -602,8 +459,9 @@ begin
 	END   
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spAssignment_GetSubmission]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spAssignment_GetSubmission]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -628,8 +486,9 @@ begin
 	END   
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spAssignment_GetUploads]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spAssignment_GetUploads]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -644,8 +503,9 @@ begin
 	where id=@assignmentID  
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spAssignmentSubmission_Create&Edit]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spAssignmentSubmission_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -685,8 +545,9 @@ BEGIN
 	END  
 
 END
+
 GO
-/****** Object:  StoredProcedure [dbo].[spAttendance_Create&Edit]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spAttendance_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -725,8 +586,9 @@ BEGIN
 	END  
 
 END
+
 GO
-/****** Object:  StoredProcedure [dbo].[spAttendance_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spAttendance_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -763,8 +625,9 @@ begin
 		--	where SubjectId=@subjectId and GradeId=@gradeId
 		--END   
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spDay_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spDay_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -778,8 +641,9 @@ begin
 	 select * from dbo.DayOfWeek
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spGrade_Create]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spGrade_Create]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -795,8 +659,9 @@ begin
 	Values (@Title); 
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spGrade_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spGrade_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -819,8 +684,9 @@ begin
 	END
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spGrade_Teacher]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spGrade_Teacher]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -838,8 +704,9 @@ begin
 	  where ts.TeacherId = @TeacherId;  
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spStudent_Create&Edit]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spStudent_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -874,8 +741,9 @@ begin
 		Where Id=@UserId 
 	END  
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spStudent_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spStudent_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -905,8 +773,9 @@ begin
 	END
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spStudent_GetAttendance]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spStudent_GetAttendance]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -921,8 +790,9 @@ begin
 	where Studentid =@StudentId 
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spSubject_Create&Edit]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spSubject_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -963,8 +833,9 @@ BEGIN
 	END  
 
 END
+
 GO
-/****** Object:  StoredProcedure [dbo].[spSubject_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spSubject_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -987,8 +858,9 @@ begin
 	END
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spSubject_Teacher]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spSubject_Teacher]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1019,8 +891,9 @@ begin
 		END  
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spTeacher_Create&Edit]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spTeacher_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1055,8 +928,9 @@ begin
 	END  
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spTeacher_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spTeacher_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1079,8 +953,9 @@ begin
 	END
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spTeacherSubject_Create&Edit]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spTeacherSubject_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1115,8 +990,9 @@ begin
 	END  
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spTime_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spTime_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1130,8 +1006,40 @@ begin
 	 select * from dbo.TimeOfDays
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spTimeTable_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spTimeTable_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create  PROCEDURE [dbo].[spTimeTable_Create&Edit]
+	@GradeId int = -1,
+	@DayId int = -1,
+	@TimeId int = -1,
+	@TeacherId int = -1,
+	@Id int = -1,
+	@SubjectId int = -1,
+	@Src nvarchar(30) = ''
+
+AS 
+begin
+	set nocount on;
+
+	IF (@Src = 'Delete')
+	BEGIN
+	    Delete from dbo.TimeTable
+		Where Id=@Id;
+	END
+
+	ELSE IF (@Src = 'Create')
+	BEGIN
+		Insert into dbo.TimeTable (TeacherId,SubjectId,DayId,TimeId,GradeId)
+		Values (@TeacherId,@SubjectId,@DayId,@TimeId,@GradeId)
+	END  
+end
+GO
+/****** Object:  StoredProcedure [dbo].[spTimeTable_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1139,30 +1047,49 @@ GO
 CREATE  PROCEDURE [dbo].[spTimeTable_Get]
 	@GradeId int = -1,
 	@DayId int = -1,
-	@TimeId int = -1
+	@TimeId int = -1,
+	@TeacherId int = -1
 
 AS 
 begin
 	set nocount on;
 
-	 select t.Id,u.FirstName,u.LastName,s.Title as SubjectTitle,d.Title as DayOfWeek,tod.Title as TimeOfWeek,g.Title as Grade
-	 from dbo.TimeTable t
-	 Inner Join dbo.Users u
-	 On t.TeacherId = u.id
-	 Inner Join dbo.Subject s
-	 on s.Id = t.SubjectId
-	 Inner Join dbo.DayOfWeek d
-	 on d.Id = t.DayId
-	 Inner Join dbo.TimeOfDays tod
-	 on tod.Id = t.TimeId
-	 Inner Join dbo.Grade g
-	 on g.Id = t.GradeId
-	 Where t.GradeId = @GradeId AND tod.Id = @TimeId AND d.Id = @DayId
-	  
+	IF (@GradeId >= 0)
+	BEGIN
+	     select t.Id,u.FirstName,u.LastName,s.Title as SubjectTitle,d.Title as DayOfWeek,tod.Title as TimeOfWeek,g.Title as Grade
+		 from dbo.TimeTable t
+		 Inner Join dbo.Users u
+		 On t.TeacherId = u.id
+		 Inner Join dbo.Subject s
+		 on s.Id = t.SubjectId
+		 Inner Join dbo.DayOfWeek d
+		 on d.Id = t.DayId
+		 Inner Join dbo.TimeOfDays tod
+		 on tod.Id = t.TimeId
+		 Inner Join dbo.Grade g
+		 on g.Id = t.GradeId
+		 Where t.GradeId = @GradeId AND tod.Id = @TimeId AND d.Id = @DayId
+	END
 
+	ELSE IF (@TeacherId >= 0)
+	BEGIN
+		 select t.Id,u.FirstName,u.LastName,s.Title as SubjectTitle,d.Title as DayOfWeek,tod.Title as TimeOfWeek,g.Title as Grade
+		 from dbo.TimeTable t
+		 Inner Join dbo.Users u
+		 On t.TeacherId = u.id
+		 Inner Join dbo.Subject s
+		 on s.Id = t.SubjectId
+		 Inner Join dbo.DayOfWeek d
+		 on d.Id = t.DayId
+		 Inner Join dbo.TimeOfDays tod
+		 on tod.Id = t.TimeId
+		 Inner Join dbo.Grade g
+		 on g.Id = t.GradeId
+		 Where t.TeacherId = @TeacherId AND tod.Id = @TimeId AND d.Id = @DayId
+	END  
 end
 GO
-/****** Object:  StoredProcedure [dbo].[spUser_Create&Edit]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spUser_Create&Edit]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1203,8 +1130,9 @@ begin
 	END 
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spUser_Get]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spUser_Get]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1227,8 +1155,9 @@ begin
 	END
 
 end
+
 GO
-/****** Object:  StoredProcedure [dbo].[spUser_Login]    Script Date: 2/9/2021 10:08:57 ******/
+/****** Object:  StoredProcedure [dbo].[spUser_Login]    Script Date: 15-Feb-21 16:14:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1245,6 +1174,7 @@ begin
 	   where Password = @Password AND Email=@EmailAddress;
 
 end
+
 GO
 USE [master]
 GO
